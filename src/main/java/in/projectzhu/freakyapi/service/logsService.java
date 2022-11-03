@@ -39,6 +39,12 @@ public void deletelog(Long id){
 
 }
 
+public logs logUpdate(logs log){
+        log.setUsercode(UUID.randomUUID().toString());
+        return repo.save(log);
+}
+
+
 
 
 

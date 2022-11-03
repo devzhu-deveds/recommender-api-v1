@@ -16,6 +16,8 @@ public class logs {
     private String Name;
     private String email;
     private String password;
+
+    @Column(updatable = false)
     private String usercode;
 
     @CreationTimestamp

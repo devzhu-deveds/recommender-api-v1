@@ -23,7 +23,7 @@ public class logsController {
     return new ResponseEntity<>(log, HttpStatus.OK);
 }
 
-@PostMapping
+@PostMapping("/new")
     public ResponseEntity<logs> addlog(@RequestBody logs log){
     logs addedlog = serve.newlog(log);
     return new ResponseEntity<>(addedlog,HttpStatus.CREATED);
@@ -44,6 +44,12 @@ public class logsController {
 
     return new ResponseEntity<>( HttpStatus.OK);
 
+}
+
+@PutMapping("/update")
+    public ResponseEntity<logs> updateLog(@RequestBody logs log){
+    logs updatedlog = serve.logUpdate(log);
+    return new ResponseEntity<>(updatedlog, HttpStatus.CREATED);
 }
 
 
